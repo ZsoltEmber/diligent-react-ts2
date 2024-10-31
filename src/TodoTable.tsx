@@ -24,6 +24,7 @@ const TodoTable: React.FC<TodoTableProps> = ({todos}) => {
                 <tr key={todo.task}>
                     <td>{todo.task}</td>
                     <td> <input type={"checkbox"}></input> </td>
+                    <td> <button>Delete</button> </td>
                 </tr>
             )})}
         </tbody>
