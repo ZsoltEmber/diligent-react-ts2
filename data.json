@@ -3,5 +3,16 @@
         "id": 1,
         "description": "Read a book.",
         "isDone": false
+    },
+    {
+        "id": 2,
+        "description": "Go for a walk.",
+        "isDone": true
+    },
+    {
+        "id": 3,
+        "description": "Write in journal.",
+        "isDone": false
     }
+    
 ]

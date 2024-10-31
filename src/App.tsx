@@ -1,7 +1,12 @@
 import TodoTable from "./TodoTable"
+import { useFetch } from "./UseFetch";
+
 
 const App = () => {
-    return <TodoTable todos={todos}/>
+
+    const todos = useFetch()
+
+    return <TodoTable todos={todos} />
 }
 
 export default App
