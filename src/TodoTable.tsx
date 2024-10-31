@@ -1,16 +1,15 @@
 
-export interface Todo {
+interface Todo {
     id: number;
     task: string;
     isDone: boolean;
 }
 
-
 interface TodoTableProps {
     todos: Todo[];
 }
 
-const TodoTable: React.FC<TodoTableProps> = ({todos}) => {
+const TodoTable: React.FC<TodoTableProps> = ({ todos }) => {
 
     return <table>
         <thead>
@@ -21,17 +20,18 @@ const TodoTable: React.FC<TodoTableProps> = ({todos}) => {
 
         </thead>
         <tbody>
-            {todos.map((todo)=> {return(
-                <tr key={todo.id}>
-                    <td>{todo.task}</td>
-                    <td> <input type={"checkbox"}></input> </td>
-                    <td> <button>Delete</button> </td>
-                </tr>
-            )})}
+            {todos.map((todo) => {
+                return (
+                    <tr key={todo.id}>
+                        <td>{todo.task}</td>
+                        <td> <input type={"checkbox"}></input> </td>
+                        <td> <button>Delete</button> </td>
+                    </tr>
+                )
+            })}
         </tbody>
     </table>
 }
 
-
-export default TodoTable
+export default TodoTable;
 
