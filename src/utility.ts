@@ -1,4 +1,4 @@
-import { Todo } from './TodoTable';
+import { Todo } from "./UseFetch";
 
 export const getTodos = async (): Promise<Todo[]> => {
     const storedTodos = localStorage.getItem('todos');
@@ -11,7 +11,6 @@ export const getTodos = async (): Promise<Todo[]> => {
         return todos;
     }
 };
-
 
 export const addTodo = async (newTodo: Todo) => {
 

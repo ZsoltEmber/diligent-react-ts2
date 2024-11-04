@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react"
-import TodoTable, { Todo } from "./TodoTable"
-import { getTodos } from "./utility"
-
-
-//TODO: delete dummy data
+import { useEffect, useState } from "react";
+import TodoTable from "./TodoTable"
+import { Todo } from "./UseFetch";
+import { getTodos } from "./utility";
 
 
 const App = () => {
@@ -14,12 +12,11 @@ const App = () => {
         const allTodos = await getTodos();
         setTodos(allTodos);
     };
-
     useEffect(() => {
         fetchTodos();
-    }, [todos]); 
+    }, [todos]);
 
-    return <TodoTable todos={todos} />;
+    return <TodoTable todos={todos} />
 }
 
 export default App
