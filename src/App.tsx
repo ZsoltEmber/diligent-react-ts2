@@ -1,15 +1,25 @@
+import { useEffect, useState } from "react"
 import TodoTable, { Todo } from "./TodoTable"
+import { getTodos } from "./utility"
 
 
 //TODO: delete dummy data
-const todos: Todo[]= [
-    {task: "task1", isDone: true},
-    {task: "task1", isDone: false},
-    {task: "task1", isDone: false},
-]
+
 
 const App = () => {
-    return <TodoTable todos={todos}/>
+
+    const [todos, setTodos] = useState<Todo[]>([]);
+
+    const fetchTodos = async () => {
+        const allTodos = await getTodos();
+        setTodos(allTodos);
+    };
+
+    useEffect(() => {
+        fetchTodos();
+    }, [todos]); 
+
+    return <TodoTable todos={todos} />;
 }
 
 export default App

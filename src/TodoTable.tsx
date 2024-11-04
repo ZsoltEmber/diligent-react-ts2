@@ -1,15 +1,17 @@
+import { addTodo } from "./utility";
+import AddTodo from "./AddTodo/AddTodo";
 
 export interface Todo {
-    task: string;
+    id: number,
+    description: string;
     isDone: boolean
 }
 
-
-interface TodoTableProps {
+export interface TodoTableProps {
     todos: Todo[];
 }
 
-const TodoTable: React.FC<TodoTableProps> = ({todos}) => {
+const TodoTable: React.FC<TodoTableProps> = ({ todos }) => {
 
     return <table>
         <thead>
@@ -20,12 +22,17 @@ const TodoTable: React.FC<TodoTableProps> = ({todos}) => {
 
         </thead>
         <tbody>
-            {todos.map((todo)=> {return(
-                <tr key={todo.task}>
-                    <td>{todo.task}</td>
-                    <td> <input type={"checkbox"}></input> </td>
-                </tr>
-            )})}
+            {todos.map((todo) => {
+                return (
+                    <tr key={todo.description}>
+                        <td>{todo.description}</td>
+                        <td> <input type={"checkbox"}></input> </td>
+                    </tr>
+                )
+            })}
+            <tr>
+                <AddTodo todos={todos} />
+            </tr>
         </tbody>
     </table>
 }
