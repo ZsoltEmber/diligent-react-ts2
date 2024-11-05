@@ -1,9 +1,12 @@
 import useAddTodo from './useAddTodo';
-import { TodoTableProps } from '../TodoTable';
+import { Todo } from '../utility';
+
+interface AddTodoProp{
+    todos: Todo[];
+}
 
 
-
-const AddTodo = ({ todos }: TodoTableProps) => {
+const AddTodo = ({ todos }: AddTodoProp) => {
     const { newTodo, handleClick, handleInputChange } = useAddTodo(todos);
 
     return (

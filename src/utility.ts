@@ -1,4 +1,10 @@
-import { Todo } from "./UseFetch";
+
+export interface Todo {
+    id: number;
+    description: string;
+    isDone: boolean;
+}
+
 
 export const getTodos = async (): Promise<Todo[]> => {
     const storedTodos = localStorage.getItem('todos');
@@ -19,4 +25,12 @@ export const addTodo = async (newTodo: Todo) => {
     todos.push(newTodo);
 
     localStorage.setItem('todos', JSON.stringify(todos));
+};
+
+export const handleToggle = (todos: Todo[], id: number, setTodos: Function): void => {
+    const updatedTodos = todos.map((todo) =>
+        todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
+);
+localStorage.setItem('todos', JSON.stringify(updatedTodos));
+setTodos(updatedTodos)
 };
