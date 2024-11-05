@@ -33,5 +33,4 @@ export const handleToggle = (todos: Todo[], id: number, setTodos: Function): voi
 );
 localStorage.setItem('todos', JSON.stringify(updatedTodos));
 setTodos(updatedTodos)
-console.log(updatedTodos)
 };
