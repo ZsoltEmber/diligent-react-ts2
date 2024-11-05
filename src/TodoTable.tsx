@@ -1,6 +1,7 @@
 import { Todo } from "./UseFetch";
+import AddTodo from "./AddTodo/AddTodo";
 
-interface TodoTableProps {
+export interface TodoTableProps {
     todos: Todo[];
     onToggle: Function;
 }
@@ -25,6 +26,9 @@ const TodoTable: React.FC<TodoTableProps> = ({ todos, onToggle }) => {
                     </tr>
                 )
             })}
+            <tr>
+                <AddTodo todos={todos}/>
+            </tr>
         </tbody>
     </table>
 }
