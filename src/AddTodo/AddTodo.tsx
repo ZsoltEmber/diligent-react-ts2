@@ -11,7 +11,7 @@ const AddTodo = ({ todos, setTodos }: AddTodoProp) => {
     const { newTodo, handleClick, handleInputChange } = useAddTodo(todos, setTodos);
 
     return (
-        <div>
+        <div className='add-todo-container'>
             <input
                 type="text"
                 value={newTodo.description}
