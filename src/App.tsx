@@ -21,7 +21,7 @@ const App = () => {
     return (
         <>
             {todos && <div>
-                <AddTodo todos={todos} />
+                <AddTodo todos={todos} setTodos={setTodos} />
                 <TodoTable todos={todos} onToggle={handleToggle} setTodos={setTodos} />
             </div>
             }

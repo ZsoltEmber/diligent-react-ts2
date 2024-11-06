@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { addTodo, Todo, calculateNextId } from '../utility';
 
-const useAddTodo = (todos: Todo[]) => {
+const useAddTodo = (todos: Todo[], setTodos: Function) => {
 
     const [newTodo, setNewTodo] = useState<Todo>({
         id: calculateNextId(todos),
@@ -15,7 +15,7 @@ const useAddTodo = (todos: Todo[]) => {
             return;
         }
 
-        addTodo(newTodo);
+        addTodo(newTodo, setTodos);
 
         setNewTodo({
             id: calculateNextId(todos) + 1,

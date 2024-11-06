@@ -3,11 +3,12 @@ import { Todo } from '../utility';
 
 interface AddTodoProp {
     todos: Todo[];
+    setTodos: Function;
 }
 
 
-const AddTodo = ({ todos }: AddTodoProp) => {
-    const { newTodo, handleClick, handleInputChange } = useAddTodo(todos);
+const AddTodo = ({ todos, setTodos }: AddTodoProp) => {
+    const { newTodo, handleClick, handleInputChange } = useAddTodo(todos, setTodos);
 
     return (
         <div>
