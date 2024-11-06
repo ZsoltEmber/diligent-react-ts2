@@ -17,6 +17,7 @@ const AddTodo = ({ todos, setTodos }: AddTodoProp) => {
                 value={newTodo.description}
                 onChange={(e) => handleInputChange(e.target.value)}
                 placeholder='Enter new task'
+                maxLength={40}
             />
             <button onClick={handleClick}>Add Todo</button>
         </div>
