@@ -1,4 +1,3 @@
-import AddTodo from "./AddTodo/AddTodo";
 import { Todo } from "./utility";
 
 export interface TodoTableProps {
@@ -22,14 +21,11 @@ const TodoTable: React.FC<TodoTableProps> = ({ todos, onToggle, setTodos }) => {
                 return (
                     <tr key={todo.id}>
                         <td>{todo.description}</td>
-                        <td> <input onChange={()=>onToggle(todos, todo.id, setTodos)} type={"checkbox"} checked={todo.isDone} ></input> </td>
+                        <td> <input onChange={() => onToggle(todos, todo.id, setTodos)} type={"checkbox"} checked={todo.isDone} ></input> </td>
                         <td> <button >Delete</button> </td>
                     </tr>
                 )
             })}
-            <tr>
-                <AddTodo todos={todos}/>
-            </tr>
         </tbody>
     </table>
 }
