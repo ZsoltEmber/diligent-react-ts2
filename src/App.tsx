@@ -20,7 +20,7 @@ const App = () => {
 
     return (
         <>
-            {todos && <div>
+            {todos && <div className="main-container">
                 <AddTodo todos={todos} setTodos={setTodos} />
                 <TodoTable todos={todos} onToggle={handleToggle} setTodos={setTodos} />
             </div>

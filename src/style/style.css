@@ -1,0 +1,41 @@
+html, body {
+    height: 100%;
+}
+
+body{
+    background-image:linear-gradient(rgb(255, 255, 255), rgb(77, 47, 249));
+}
+
+
+
+.main-container{
+    background-image: linear-gradient(to right, rgba(35, 31, 255, 0.634), rgba(220, 230, 255, 0.166));
+    width: 80%;
+    border-radius: 12px;
+    justify-self: center;
+    box-shadow: 1px 2px 5px #333;
+}
+
+
+thead{
+    color: white;
+    font-size: xx-large;
+    font-family: cursive;
+    text-decoration:underline;
+}
+
+td{
+    font-family: cursive;
+    color: floralwhite;
+    font-size: x-large;
+}
+
+.todo-item.done{
+    text-decoration: line-through;
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(255, 255, 255);
+}
+
+.todo-text.done{
+    color: rgba(255, 250, 240, 0.7);
+}
