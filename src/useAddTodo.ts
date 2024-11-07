@@ -1,36 +1,32 @@
-import { useState } from 'react';
-import { Todo } from '../UseFetch';
-import { addTodo } from '../utility';
+import React, { useState } from 'react';
+import { addTodo, Todo, calculateNextId } from './utility';
 
-const useAddTodo = (todos: Todo[]) => {
+const useAddTodo = (todos: Todo[], setTodos: Function) => {
 
-    const initialNextId = todos.length > 0 ? todos[todos.length - 1].id + 1 : 1;
-
-    const [nextId, setNextId] = useState<number>(initialNextId);
     const [newTodo, setNewTodo] = useState<Todo>({
-        id: nextId,
+        id: calculateNextId(todos),
         description: '',
         isDone: false,
     });
 
-    const handleClick = () => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        event.preventDefault();
         if (newTodo.description.trim() === '') {
             alert('Cannot add empty task!');
             return;
         }
-        addTodo(newTodo);
 
-        setNextId((prevId: number) => prevId + 1);
+        addTodo(newTodo, setTodos);
 
         setNewTodo({
-            id: nextId,
+            id: calculateNextId(todos) + 1,
             description: '',
             isDone: false,
         });
     };
 
     const handleInputChange = (description: string) => {
-        setNewTodo((prev : Todo) => ({ ...prev, description }));
+        setNewTodo((prev: Todo) => ({ ...prev, description }));
     };
 
     return {

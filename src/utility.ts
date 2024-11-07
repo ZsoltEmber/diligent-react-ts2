@@ -18,19 +18,39 @@ export const getTodos = async (): Promise<Todo[]> => {
     }
 };
 
-export const addTodo = async (newTodo: Todo) => {
-
+export const addTodo = async (newTodo: Todo, setTodos: Function) => {
     const todos = await getTodos();
-
     todos.push(newTodo);
-
+    setTodos(todos)
     localStorage.setItem('todos', JSON.stringify(todos));
 };
 
 export const handleToggle = (todos: Todo[], id: number, setTodos: Function): void => {
     const updatedTodos = todos.map((todo) =>
         todo.id === id ? { ...todo, isDone: !todo.isDone } : todo
-);
-localStorage.setItem('todos', JSON.stringify(updatedTodos));
-setTodos(updatedTodos)
+    );
+    localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    setTodos(updatedTodos)
 };
+
+
+export const calculateNextId = (todos: Todo[]) => {
+    if (todos.length == 0) {
+        return 1;
+    }
+    const ids: number[] = [];
+    todos.forEach(todo => {
+        ids.push(todo.id)
+    });
+    const maxId: number = Math.max(...ids)
+    return maxId + 1;
+};
+
+
+export const deleteTodo = (todos: Todo[], id: number, setTodos: Function) =>{
+    const index = todos.findIndex((todo)=> todo.id === id)
+    const updatedTodos = todos.slice();
+    updatedTodos.splice(index, 1);
+    setTodos(updatedTodos);
+    localStorage.setItem('todos', JSON.stringify(updatedTodos));
+}
