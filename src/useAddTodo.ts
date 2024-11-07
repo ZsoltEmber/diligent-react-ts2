@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { addTodo, Todo, calculateNextId } from './utility';
 
 const useAddTodo = (todos: Todo[], setTodos: Function) => {
@@ -9,7 +9,8 @@ const useAddTodo = (todos: Todo[], setTodos: Function) => {
         isDone: false,
     });
 
-    const handleClick = () => {
+    const handleClick = (event: React.MouseEvent<HTMLElement>) => {
+        event.preventDefault();
         if (newTodo.description.trim() === '') {
             alert('Cannot add empty task!');
             return;

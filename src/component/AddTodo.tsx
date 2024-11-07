@@ -12,13 +12,15 @@ const AddTodo = ({ todos, setTodos }: AddTodoProp) => {
 
     return (
         <div className='add-todo-container'>
+            <form>
             <input
                 type="text"
                 value={newTodo.description}
                 onChange={(e) => handleInputChange(e.target.value)}
                 placeholder='Enter new task'
             />
-            <button onClick={handleClick}>Add Todo</button>
+            <button onClick={(event)=>handleClick(event)}>Add Todo</button>
+            </form>
         </div>
     );
 };
