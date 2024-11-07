@@ -1,16 +1,17 @@
-import useAddTodo from './useAddTodo';
+import useAddTodo from '../useAddTodo';
 import { Todo } from '../utility';
 
-interface AddTodoProp{
+interface AddTodoProp {
     todos: Todo[];
+    setTodos: Function;
 }
 
 
-const AddTodo = ({ todos }: AddTodoProp) => {
-    const { newTodo, handleClick, handleInputChange } = useAddTodo(todos);
+const AddTodo = ({ todos, setTodos }: AddTodoProp) => {
+    const { newTodo, handleClick, handleInputChange } = useAddTodo(todos, setTodos);
 
     return (
-        <td>
+        <div className='add-todo-container'>
             <input
                 type="text"
                 value={newTodo.description}
@@ -18,7 +19,7 @@ const AddTodo = ({ todos }: AddTodoProp) => {
                 placeholder='Enter new task'
             />
             <button onClick={handleClick}>Add Todo</button>
-        </td>
+        </div>
     );
 };
 

@@ -1,0 +1,92 @@
+html {
+    height: 100%;
+    background-image:linear-gradient(rgb(96, 135, 252), rgb(77, 47, 249));
+}
+
+
+
+
+.main-container{
+    background-image: linear-gradient(to right, rgba(35, 31, 255, 0.634), rgba(220, 230, 255, 0.166));
+    width: 80%;
+    justify-self: center;
+    box-shadow: 1px 2px 5px #333;
+}
+
+.main-container, button, input{
+    border-radius: 0.5em;;
+}
+
+button, h1, thead, td, input, input::placeholder{
+    font-family: cursive;
+    color: floralwhite;
+    
+}
+
+button{
+    background-color: rgb(255, 0, 157);
+    font-size: large;
+    box-shadow: 1px 2px 5px #333;
+    margin-left: 2rem;
+}
+
+td{
+    font-size: x-large;
+    margin-left: 2rem;
+    display: flex;
+    width: auto;
+}
+
+
+
+.delete {
+    width: 2rem;
+    height: 2rem;
+    margin-right: 2rem;
+    margin-left: auto;
+}
+
+h1{
+    justify-self: center;
+    font-size: 8vh;
+
+}
+
+thead{
+    font-size: xx-large;
+    text-decoration:underline;
+}
+
+.todo-text{
+    max-width: 40vw;
+    word-wrap: break-word;
+}
+
+.todo-text.done{
+    text-decoration: line-through;
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(255, 255, 255);
+    color: rgba(255, 250, 240, 0.7);
+}
+
+.add-todo-container{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    width: 100%;
+    justify-self:center;
+    box-shadow: 1px 2px 5px #333;
+}
+
+table{
+    width: 100%;
+}
+
+input{
+    height: 2rem;
+    background-color: rgba(105, 105, 241, 0);
+    margin-left: 2rem;
+}
+
+
