@@ -1,4 +1,4 @@
-import { Todo } from "./utility";
+import { Todo, deleteTodo } from "./utility";
 
 export interface TodoTableProps {
     todos: Todo[];
@@ -22,7 +22,7 @@ const TodoTable: React.FC<TodoTableProps> = ({ todos, onToggle, setTodos }) => {
                     <tr key={todo.id}>
                         <td>
                         <span onClick={() => onToggle(todos, todo.id, setTodos)}  className={todo.isDone ? 'todo-text done' : 'todo-text'}>{todo.description}</span>
-                        <button className="delete" >X</button>
+                        <button onClick={()=> deleteTodo(todos, todo.id, setTodos)} className="delete" >X</button>
                         </td>
                     </tr>
                 )
