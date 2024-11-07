@@ -46,3 +46,12 @@ export const calculateNextId = (todos: Todo[]) => {
     console.log(maxId)
     return maxId + 1;
 };
+
+
+export const deleteTodo = (todos: Todo[], id: number, setTodos: Function) =>{
+    const index = todos.findIndex((todo)=> todo.id === id)
+    const updatedTodos = todos.slice();
+    updatedTodos.splice(index, 1);
+    setTodos(updatedTodos);
+    localStorage.setItem('todos', JSON.stringify(updatedTodos));
+}
