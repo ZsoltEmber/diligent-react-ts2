@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import TodoTable from "./TodoTable"
+import TodoTable from "./component/TodoTable"
 import { getTodos } from "./utility";
 import { handleToggle, Todo } from "./utility";
-import AddTodo from "./AddTodo/AddTodo";
+import AddTodo from "./component/AddTodo";
 
 const App = () => {
 

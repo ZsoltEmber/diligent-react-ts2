@@ -43,7 +43,6 @@ export const calculateNextId = (todos: Todo[]) => {
         ids.push(todo.id)
     });
     const maxId: number = Math.max(...ids)
-    console.log(maxId)
     return maxId + 1;
 };
 

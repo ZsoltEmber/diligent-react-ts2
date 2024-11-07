@@ -1,4 +1,4 @@
-import { Todo, deleteTodo } from "./utility";
+import { Todo, deleteTodo } from "../utility";
 
 export interface TodoTableProps {
     todos: Todo[];

@@ -1,4 +1,4 @@
-import useAddTodo from './useAddTodo';
+import useAddTodo from '../useAddTodo';
 import { Todo } from '../utility';
 
 interface AddTodoProp {

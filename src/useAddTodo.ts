@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { addTodo, Todo, calculateNextId } from '../utility';
+import { addTodo, Todo, calculateNextId } from './utility';
 
 const useAddTodo = (todos: Todo[], setTodos: Function) => {
 
