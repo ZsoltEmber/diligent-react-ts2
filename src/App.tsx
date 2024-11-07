@@ -20,8 +20,9 @@ const App = () => {
 
     return (
         <>
-            {todos && <div>
-                <AddTodo todos={todos} />
+        <h1>TODO</h1>
+            {todos && <div className="main-container">
+                <AddTodo todos={todos} setTodos={setTodos} />
                 <TodoTable todos={todos} onToggle={handleToggle} setTodos={setTodos} />
             </div>
             }

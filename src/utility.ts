@@ -18,9 +18,10 @@ export const getTodos = async (): Promise<Todo[]> => {
     }
 };
 
-export const addTodo = async (newTodo: Todo) => {
+export const addTodo = async (newTodo: Todo, setTodos: Function) => {
     const todos = await getTodos();
     todos.push(newTodo);
+    setTodos(todos)
     localStorage.setItem('todos', JSON.stringify(todos));
 };
 

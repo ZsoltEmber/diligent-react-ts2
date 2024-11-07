@@ -8,11 +8,11 @@ export interface TodoTableProps {
 
 const TodoTable: React.FC<TodoTableProps> = ({ todos, onToggle, setTodos }) => {
 
-    return <table>
+    return (
+    <table>
         <thead>
             <tr>
-                <th>Task</th>
-                <th>Done</th>
+                <th>Tasks</th>
             </tr>
 
         </thead>
@@ -20,14 +20,16 @@ const TodoTable: React.FC<TodoTableProps> = ({ todos, onToggle, setTodos }) => {
             {todos.map((todo) => {
                 return (
                     <tr key={todo.id}>
-                        <td>{todo.description}</td>
-                        <td> <input onChange={() => onToggle(todos, todo.id, setTodos)} type={"checkbox"} checked={todo.isDone} ></input> </td>
-                        <td> <button >Delete</button> </td>
+                        <td>
+                        <span onClick={() => onToggle(todos, todo.id, setTodos)}  className={todo.isDone ? 'todo-text done' : 'todo-text'}>{todo.description}</span>
+                        <button className="delete" >X</button>
+                        </td>
                     </tr>
                 )
             })}
         </tbody>
     </table>
+    )
 }
 
 export default TodoTable;
